@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary mb-3">Welcome to Neural Diagnosis</h1>
+        <p class="lead text-muted">Exploring the Power of Neural Networks for Eye Diagnosis</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Mission Card -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <i class="fas fa-bullseye fa-lg"></i>
+                        </div>
+                        <h2 class="mb-0">Our Mission</h2>
+                    </div>
+                    <p class="card-text">
+                        This project aims to leverage advanced neural networks to enhance the early detection and diagnosis of eye
+                        diseases. Our goal is to make eye care accessible, efficient, and highly accurate, addressing the global challenge
+                        of rising vision impairments.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Card -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <i class="fas fa-cogs fa-lg"></i>
+                        </div>
+                        <h2 class="mb-0">How It Works</h2>
+                    </div>
+                    <p class="card-text mb-3">This project involves:</p>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item bg-transparent border-0 p-0 ps-3">
+                            Training multiple neural networks on retinal image datasets
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 ps-3">
+                            Evaluating and comparing model performance
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 ps-3">
+                            Deploying best-performing models
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Card -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <i class="fas fa-question-circle fa-lg"></i>
+                        </div>
+                        <h2 class="mb-0">Why This Research?</h2>
+                    </div>
+                    <p class="card-text">
+                        Eye diseases like diabetic retinopathy and glaucoma often go undetected until it's too late. 
+                        Manual screening is time-consuming. Our AI solutions enable early detection and reduce 
+                        healthcare burden.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Applications Card -->
+        <div class="col-md-6">
+            <div class="card h-100 shadow">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary text-white rounded-circle p-3 me-3">
+                            <i class="fas fa-users fa-lg"></i>
+                        </div>
+                        <h2 class="mb-0">Applications</h2>
+                    </div>
+                    <p class="card-text">Key applications include:</p>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 ps-3">
+                            <i class="fas fa-circle-small text-primary me-2"></i>
+                            Automated diagnosis tools
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 ps-3">
+                            <i class="fas fa-circle-small text-primary me-2"></i>
+                            Telemedicine integration
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 ps-3">
+                            <i class="fas fa-circle-small text-primary me-2"></i>
+                            Personalized treatment planning
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

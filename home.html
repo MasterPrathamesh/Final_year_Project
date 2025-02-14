@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="text-center mb-5">
+    <h1 class="display-4 fw-bold mb-4 text-primary">Welcome to Neural Diagnosis</h1>
+    <p class="lead text-muted">Advancing eye care with cutting-edge neural networks</p>
+</section>
+
+<div class="row g-4">
+    <!-- About Card -->
+    <div class="col-md-6">
+        <div class="card h-100 shadow">
+            <div class="card-body">
+                <h2 class="card-title mb-3">About This Project</h2>
+                <p class="card-text">
+                    Leverage advanced neural networks for early detection of eye diseases with 
+                    faster, accurate diagnostic solutions for patients and healthcare providers.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Card -->
+    <div class="col-md-6">
+        <div class="card h-100 shadow">
+            <div class="card-body">
+                <h2 class="card-title mb-3">Key Features</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent text-reset">
+                        <i class="fas fa-eye me-2 text-primary"></i>
+                        AI-driven retinal disease diagnosis
+                    </li>
+                    <li class="list-group-item bg-transparent text-reset">
+                        <i class="fas fa-brain me-2 text-primary"></i>
+                        Neural network analysis
+                    </li>
+                    <li class="list-group-item bg-transparent text-reset">
+                        <i class="fas fa-laptop-medical me-2 text-primary"></i>
+                        Telemedicine integration
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

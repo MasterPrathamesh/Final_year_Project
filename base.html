@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - VisionAid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bs-dark-bg: rgb(26, 39, 73);
+            --bs-dark-text: #e0e0e0;
+            --bs-dark-card: #1e1e1e;
+            --bs-dark-border: #404040;
+        }
+
+        [data-bs-theme="dark"] {
+            color: var(--bs-dark-text);
+            background-color: var(--bs-dark-bg) !important;
+        }
+
+        [data-bs-theme="dark"] body {
+            background-color: var(--bs-dark-bg) !important;
+        }
+
+        [data-bs-theme="dark"] .navbar-dark {
+            background-color: var(--bs-dark-bg) !important;
+            border-bottom: 1px solid var(--bs-dark-border);
+        }
+
+        [data-bs-theme="dark"] .card {
+            background-color: var(--bs-dark-card);
+            border-color: var(--bs-dark-border);
+            color: var(--bs-dark-text);
+        }
+
+        [data-bs-theme="dark"] .btn-outline-secondary {
+            border-color: var(--bs-dark-border);
+            color: var(--bs-dark-text);
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-content {
+            min-height: calc(100vh - 76px); /* Adjust based on header height */
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    <main class="main-content">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        
+        // Initialize theme
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update button icon
+            const icon = themeToggle.querySelector('i');
+            icon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        });
+        
+        // Set initial button icon
+        const icon = themeToggle.querySelector('i');
+        icon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+    </script>
+</body>
+</html>
