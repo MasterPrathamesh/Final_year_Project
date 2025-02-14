@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Diagnosis Results{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="card shadow">
+        <div class="card-body">
+            <h2 class="card-title mb-4">Diagnosis Results</h2>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='uploads/' + image_path) }}" 
+                         class="img-fluid rounded" 
+                         alt="Uploaded Eye Image">
+                </div>
+            </div>
+
+            {% for prediction in predictions %}
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">
+                    {{ prediction.model }} Model
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Prediction: {{ prediction.prediction }} 
+                        <span class="badge bg-success">
+                            Confidence: {{ (prediction.confidence * 100)|round(2) }}%
+                        </span>
+                    </h5>
+                    <div class="progress mb-3" style="height: 25px;">
+                        <div class="progress-bar bg-success" 
+                             role="progressbar" 
+                             style="width: {{ (prediction.confidence * 100)|round(2) }}%">
+                        </div>
+                    </div>
+                    <h6>Detailed Probabilities:</h6>
+                    <ul class="list-group">
+                        {% for label, prob in prediction.probabilities.items() %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ label|capitalize }}
+                            <span class="badge bg-primary rounded-pill">
+                                {{ (prob * 100)|round(2) }}%
+                            </span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
